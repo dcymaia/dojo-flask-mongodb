@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from flask_pymongo import PyMongo
+
 
 my_app_web = Flask('my_app_web')
+my_mongo = PyMongo(my_app_web)
 
 
 @my_app_web.route('/list')
