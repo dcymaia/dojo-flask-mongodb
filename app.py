@@ -12,9 +12,11 @@ def home_page():
                            online_users=online_users)
 
 
-@my_app_web.route('/list')
-def list_machine():
-    return render_template('list_machine.html')
+@my_app_web.route('/user/<username>')
+def user_profile(username):
+    user = my_mongo.db.users.find_one_or_404({'_id': username})
+    return render_template('user.html',
+                           user=user)
 
 
 if __name__ == "__main__":

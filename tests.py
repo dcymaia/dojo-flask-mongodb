@@ -8,9 +8,9 @@ class TestApp(unittest.TestCase):
         self.response = app.get('/')
         self.assertEqual(200, self.response.status_code)
 
-    def test_app_list_url(self):
+    def test_app_user_url(self):
         app = my_app_web.test_client()
-        self.response = app.get('/list')
+        self.response = app.get('/user/dcymaia')
         self.assertEqual(200, self.response.status_code)
 
 
